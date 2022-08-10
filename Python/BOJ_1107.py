@@ -1,12 +1,15 @@
+# 현재 채널보다 아래를 탐색
 def low_channel(lst,N):
     for i in range(N,-1,-1):
         for j in range(len(str(i))):
+            # 고장난 버튼이 있을 경우 i 값을 바꿔 다시 탐색
             if str(i)[j] in lst:
                 break
+            # 없이 끝났을 경우 값을 리턴
             elif j==len(str(i))-1:
                 return (N-i)+len(str(i))
     return 1000001
-
+# 현재 채널보다 위를 탐색
 def high_channel(lst,N):
     for i in range(N,1000001):
         for j in range(len(str(i))):
